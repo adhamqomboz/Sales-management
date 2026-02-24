@@ -11,7 +11,6 @@ let create_button = document.getElementById('create-button');
 var is_edit = false;
 var editId = 0;
 
-// new line
 
 
 
