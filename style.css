@@ -178,10 +178,11 @@ tbody tr:hover {
     background-color: rgb(142, 2, 2);
     letter-spacing: 1px;
 }
- 
-th,td {
+
+th,
+td {
     /* width: 100%; */
-    padding-right:50px;
+    padding-right: 50px;
     font-size: 20px;
     align-content: center;
 }
@@ -190,10 +191,12 @@ th,td {
 thead tr th {
     font-size: 17px;
 }
-thead{
+
+thead {
     /* width: 100%; */
     /* position: absolute; */
 }
+
 .delete_all {
     width: 100%;
     height: 40px;
@@ -212,10 +215,26 @@ thead{
     transition: all 0.3s ease;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
 .block {
     display: block;
+}
+
+.deleteAllButton {
+    background-color:#51025f ;
+    border:none ;
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.deleteAllButton:hover{
+    letter-spacing: 1px;
+    background-color: #c1121f;
 }

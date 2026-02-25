@@ -23,7 +23,7 @@
                 <input onkeyup="getTotal()" type="text" id="taxes" placeholder="taxes">
                 <input onkeyup="getTotal()" type="text" id="ads" placeholder="ads">
                 <input onkeyup="getTotal()" type="text" id="discount" placeholder="discount">
-                <small id="total">Total:</small>
+                <small id="total">Total : </small>
             </div>
 
             <input type="text" id="count" placeholder="Count">
@@ -34,13 +34,15 @@
 
         </div>
         <div class="output">
-            <input type="search" id="search" placeholder="Search">
+            <input onkeyup="searchData(this.value)" type="search" id="search" placeholder="Search">
             <div class="searching-buttons">
-                <button class="search-by-title">Search by title</button>
-                <button class="search-by-category">Search by category</button>
+                <button class="search-by-title" id="search_by_title_id" onclick ="getSearchMood(this.id)">Search by title</button>
+                <button class="search-by-category" id="search_by_category_id" onclick ="getSearchMood(this.id)">Search by category</button>
             </div>
-                <button class="delete_all" id="delate-all">Delete All</button>
+            <div id="deleteAll">
 
+            </div>
+            
 
 
             <table class="table hidden">
