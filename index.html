@@ -15,9 +15,7 @@
             <p>PRODUCT MANAGMENT SYSTEM</p>
         </div>
         <div class="input">
-            <!--the price-->
             <input type="text" id="title" placeholder="Title">
-            <!-- The price -->
             <div class="price">
                 <input onkeyup="getTotal()" type="text" id="price" placeholder="price">
                 <input onkeyup="getTotal()" type="text" id="taxes" placeholder="taxes">
@@ -30,20 +28,26 @@
             <input type="text" id="category" placeholder="Category">
             <button class="create-button" id="create-button">Create</button>
 
-            <!-- <button class="delate-all">Delete All <span>(num)</span></button> -->
 
         </div>
         <div class="output">
             <input onkeyup="searchData(this.value)" type="search" id="search" placeholder="Search">
             <div class="searching-buttons">
-                <button class="search-by-title" id="search_by_title_id" onclick ="getSearchMood(this.id)">Search by title</button>
-                <button class="search-by-category" id="search_by_category_id" onclick ="getSearchMood(this.id)">Search by category</button>
+                <button class="search-by-title" id="search_by_title_id" onclick="getSearchMood(this.id)">Search by
+                    title</button>
+                <button class="search-by-category" id="search_by_category_id" onclick="getSearchMood(this.id)">Search by
+                    category</button>
             </div>
             <div id="deleteAll">
-
+                <button class="deleteAllButton"  onclick="deleteAll()"> Delete All</button>
             </div>
-            
-
+            <div class="container" id="container_id">
+                <form>
+                    <p>Are you sure ? </p>
+                    <button type="button" id="confirm" onclick="getConfirmationMood(this.id)">yes</button>
+                    <button type="button" id="cancel" onclick="getConfirmationMood(this.id)">No</button>
+                </form>
+            </div>
 
             <table class="table hidden">
                 <thead id="thead">
@@ -67,14 +71,6 @@
 
 
         </div>
-
-
-
-
-
-
-
-
 
 
 

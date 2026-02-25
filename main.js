@@ -8,7 +8,10 @@ let count = document.getElementById('count');
 let category = document.getElementById('category');
 let tagTable = document.getElementsByClassName('table')[0];
 let create_button = document.getElementById('create-button');
+let delete_all_btn = document.getElementById("deleteAll")
+let container = document.getElementById("container_id")
 let is_edit = false;
+container.style.display = 'none'
 let editId = 0;
 
 
@@ -46,9 +49,8 @@ create_button.onclick = function () {
         is_edit = false
         create_button.innerText = 'Create';
 
-
     } else {
-        if (!count.value) { 
+        if (!count.value) {
             products.push(newPro);
         }
         for (let i = 0; i < count.value; i++) {
@@ -56,11 +58,7 @@ create_button.onclick = function () {
         }
     }
 
-
-
-
     localStorage.setItem('product', JSON.stringify(products));
-
 
     cleardata();
     showData();
@@ -79,12 +77,18 @@ function cleardata() {
     total.style.background = 'rgb(229, 13, 13)';
 }
 
-
 // read
 function showData() {
+    console.log(products)
+            delete_all_btn.style.display = "block"
+
     if (products.length > 0) {
         tagTable.classList.replace('hidden', 'block');
+        delete_all_btn.style.display = "block"
+    } else {
+        delete_all_btn.style.display = "none"
     }
+
     var table = '';
 
     for (let i = 0; i < products.length; i++) {
@@ -110,15 +114,6 @@ function showData() {
     }
 
     document.getElementById('tbody').innerHTML = table;
-    let delete_all_btn = document.getElementById('deleteAll');
-
-    if (products.length > 0) {
-        delete_all_btn.innerHTML = `
-            <button class = "deleteAllButton" onclick = "deleteAll()"> Delete All</button>
-`
-    } else {
-        delete_all_btn.innerHTML = ''
-    }
 
 
 
@@ -136,10 +131,20 @@ function deleteProduct(i) {
 }
 
 function deleteAll() {
-    localStorage.clear()
-    products.splice(0)
-    showData()
+    container.style.display = "block";
 }
+
+function getConfirmationMood(id) {
+    if (id === "confirm") {
+        localStorage.clear();
+        products.splice(0);
+        showData();
+        container.style.display = "none";
+    } else if (id === "cancel") {
+        container.style.display = "none";
+    }
+}
+
 
 // update
 function updateProduct(i) {

@@ -11,6 +11,57 @@ body {
 
 }
 
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+
+.container form {
+    background: #5e1b6f;
+    padding: 30px 40px;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+    min-width: 300px;
+    animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.container form p{
+    font-size: 30px;
+}
+
+.container form button {
+    width: 200px;
+    height: 60px;
+    border-radius: 50px;
+    border: #000;
+    background-color: #C19A6B;
+    margin-top: 15px;
+    font-size: 30px;
+}
+
 .crud {
     width: 80%;
     margin: auto;
@@ -224,8 +275,8 @@ thead {
 }
 
 .deleteAllButton {
-    background-color:#51025f ;
-    border:none ;
+    background-color: #51025f;
+    border: none;
     width: 100%;
     height: 40px;
     margin-top: 5px;
@@ -234,7 +285,7 @@ thead {
     font-size: 18px;
 }
 
-.deleteAllButton:hover{
+.deleteAllButton:hover {
     letter-spacing: 1px;
     background-color: #c1121f;
 }
